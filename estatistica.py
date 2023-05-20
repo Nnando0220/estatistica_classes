@@ -17,7 +17,9 @@ def tirar_amplitude(array):
 
 def val_maior(array):
     val = int(input("DIGITE O NUMERO PARA A PORCENTAGEM DE NUMERO(S) MAIORES QUE:"))
-    count = reduce(lambda count, x: count+1, filter(lambda x: x>val, array), 0)
+    while(val > array.max()):
+        val = int(input("DIGITE O NUMERO PARA A PORCENTAGEM DE NUMERO(S) MAIORES QUE:"))
+    count = reduce(lambda count, x: count+1, filter(lambda x: x<val, array), 0)
     print("PORCENTAGEM: ",(count/len(array)*100),"%")
 
 def desvio_medio(array, media):
